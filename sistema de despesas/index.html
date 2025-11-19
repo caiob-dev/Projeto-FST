@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="./img/foto dev.png"/>
+            </a>
+            <ul>
+                <li><a href="#table">Tabela</a></li>
+                <li><a href="#grafico">Grafíco</a></li>
+                <li><a href="#filtro">Filtros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="title">Formulário de despesas</h2>
+
+        <form action="">
+            <div class="form">
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" required />
+            </div>
+
+            <div class="form">
+                <label for="categoria">Categoria:</label>
+                <input type="text" id="categoria" required />
+            </div>
+
+            <div class="form">
+                <label for="valor">Valor:</label>
+                <input type="text" id="valor" required />
+            </div>
+
+            <div class="form">
+                <label for="data">Data:</label>
+                <input type="date" id="data" required />
+            </div>
+
+            <div class="form-button">
+                <button class="btn-submit" type="submit">Enviar</button>
+            </div>
+        </form>
+
+        <div class="table100-body js-pscroll" id="table">
+            <table>
+                <thead>
+                    <tr class="row100 head">
+                        <th class="cell100 column1">Descrição</th>
+                        <th class="cell100 column2">Categoria</th>
+                        <th class="cell100 column3">Valor</th>
+                        <th class="cell100 column4">Data</th>
+                        <th class="cell100 column5">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row100 body">
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+
+        <section class="grafico" id="grafico">
+            <h2 class="title">Gastos por categoria:</h2>
+            <div class="grafico-container">
+                <canvas id="graficoDespesas"></canvas>
+            </div>
+        </section>
+
+        <section class="resumo">
+            <h2 class="title-resumo">Resumo</h2>
+            <p class="total-despesa">Total de despesas: <strong id="total-despesa">R$ 0,00</strong></p>
+        </section>
+
+        <h2 class="title-filtros" id="filtro">Filtros</h2>
+        <section class="filtros">
+            <label for="filtro-categoria">Valor:</label>
+            <select id="filtro-categoria">
+                <option value="">Todas</option>
+            </select>
+
+            <label for="filtro-data-inicio">Data inicial:</label>
+            <input type="date" id="filtro-data-inicio">
+
+            <label for="filtro-data-final">Data final:</label>
+            <input type="date" id="filtro-data-fim">
+            
+            <button id="btn-filtrar">Filtrar</button>
+            <button id="btn-limpar-filtros">Limpar filtros</button>
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://www.linkedin.com/in/caio-bomfim-pantoja/" target="_blank"><i class="fa-brands fa-linkedin fa-xl" style="color: #ffffff; font-size: 45px;"></i></a>
+        </a>
+        <a href="https://github.com/caiob-dev" target="_blank"><i class="fa-brands fa-github fa-xl" style="color: #ffffff; font-size: 45px;"></i></a>
+        <p class="copyright" id="copyright"></p>
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+</html>
